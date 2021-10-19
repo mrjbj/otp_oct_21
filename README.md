@@ -1,4 +1,4 @@
-# Groxio OTP July course
+# Groxio OTP course
 public groxio training
 
 ## 1 Install these tools, plus Elixir
