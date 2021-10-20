@@ -2,7 +2,7 @@ defmodule StepUpTest do
   use ExUnit.Case
   doctest StepUp
 
-  test "greets the world" do
-    assert StepUp.hello() == :world
+  test "new returns map with input as integer" do
+    assert StepUp.new("100") == %{count: 100}
   end
 end
