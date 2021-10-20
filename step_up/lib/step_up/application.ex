@@ -9,7 +9,7 @@ defmodule StepUp.Application do
   def start(_type, _args) do
     children = [
       # Starts a worker by calling: StepUp.Worker.start_link(arg)
-      # {StepUp.Worker, arg}
+      {StepUp.Server, “42”}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
