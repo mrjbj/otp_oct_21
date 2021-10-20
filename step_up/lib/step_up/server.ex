@@ -28,18 +28,18 @@ defmodule StepUp.Server do
 
   ## Client
   def start_link(input) do
-    {:ok, _pid} = GenServer.start_link(__MODULE__, input)
+    {:ok, _pid} = GenServer.start_link(__MODULE__, input, name: __MODULE__)
   end
 
-  def increase(pid) do
+  def increase(pid \\ arg) do
     GenServer.cast(pid, :increase)
   end
 
-  def decrease(pid) do
+  def decrease(pid \\ arg) do
     GenServer.cast(pid, :decrease)
   end
 
-  def message(pid) do
+  def message(pid \\ arg) do
     GenServer.call(pid, :message)
   end
 end
