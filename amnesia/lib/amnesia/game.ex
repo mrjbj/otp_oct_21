@@ -10,21 +10,21 @@ defmodule Amnesia.Game do
   end
 
   def guess(pid \\ __MODULE__, numbers) do
-    GenServer.cast(pid, {:guess, numbers})
+    GenServer.call(pid, {:guess, numbers})
   end
 
   #
   # Callbacks
   #
   @impl true
-  def init(answer) do
-    board = Board.new(answer)
+  def init(_answer) do
+    board = Board.new()
     {:ok, board}
   end
 
   @impl true
-  def handle_cast({:guess, numbers}, board) do
-    board = Board.guess(board, numbers)
-    {:noreply, board}
+  def handle_call({:guess, numbers}, _from, board) do
+    new_board = Board.guess(board, numbers)
+    {:reply, Board.as_map(new_board), new_board}
   end
 end
