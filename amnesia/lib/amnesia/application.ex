@@ -10,6 +10,13 @@ defmodule Amnesia.Application do
     children = [
       # Starts a worker by calling: Amnesia.Worker.start_link(arg)
       # {Amnesia.Worker, arg}
+      {Amnesia.Game, :abul},
+      {Amnesia.Game, :bruno},
+      {Amnesia.Game, :john},
+      {Amnesia.Game, :jason},
+      {Amnesia.Game, :kevin},
+      {Amnesia.Game, :nader},
+      {Amnesia.Game, :bruce}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
