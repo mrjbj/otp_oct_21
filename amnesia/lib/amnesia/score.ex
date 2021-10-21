@@ -11,9 +11,8 @@ defmodule Amnesia.Score do
     %__MODULE__{reds: reds, whites: whites}
   end
 
-  # def as_string(%{reds: reds, whites: whites}) do
-  #   "RRWW"
-
-  # end
+  def as_string(%{reds: reds, whites: whites}) do
+    String.duplicate("R", reds) <> String.duplicate("W", whites)
+  end
 
 end
