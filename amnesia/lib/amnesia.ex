@@ -1,18 +1,9 @@
 defmodule Amnesia do
-  @moduledoc """
-  Documentation for `Amnesia`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Amnesia.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def start_game(name) do
+   {:ok, _pid}= DynamicSupervisor.start_child(:sup, {Amnesia.Game, name})
+  end
+# :bruce
+  def guess(name, guess) do
+   Amnesia.Game.guess(name, guess)
   end
 end
