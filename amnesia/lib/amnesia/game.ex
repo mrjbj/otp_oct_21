@@ -3,7 +3,7 @@ defmodule Amnesia.Game do
   alias Amnesia.Game.Board
 
   #
-  # Client API
+  # Client API, calling out to GenServer
   #
   def start_link(name) do
     {:ok, _pid} = GenServer.start_link(__MODULE__, [], name: name)
@@ -14,7 +14,7 @@ defmodule Amnesia.Game do
   end
 
   #
-  # Callbacks
+  # Server Interface Implementation
   #
   @impl true
   def init(_answer) do

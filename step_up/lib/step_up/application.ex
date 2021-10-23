@@ -8,7 +8,7 @@ defmodule StepUp.Application do
   @impl true
   def start(_, _) do
     children = [
-      # Starts a worker by calling: StepUp.Worker.start_link(arg)
+      # Starts one GenServer instance, initialized with value of "42"
       {StepUp.Server, "42"}
     ]
 
